@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+    <head>
+
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.min.css">
+        <script type="text/javascript" src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+        <title></title>
+
+
+
+
+
+
+    </head>
+    <body>
+
+    <div class="apps">
+
+        <button onClick="takePhoto()">拍照</button>
+    </div>
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            //自己定义的拍照函数
+            function takePhoto() {
+                //拍照
+                //navigator.camera就是上面我们所说的clobbers定义的东西，用来调用插件中的方法的
+                //getPicture就是插件中调用摄像头拍照的方法
+                navigator.camera.getPicture(takeSuccess, takeFail, {
+                    destinationType : Camera.DestinationType.FILE_URI
+                });
+
+                //拍照成功后回调
+                function takeSuccess(imageURI) {
+                    console.log('success' + imageURI);
+                }
+
+                //失败后回调
+                function takeFail(message) {
+                    navigator.notification.alert("拍照失败，原因：" + message);
+                }
+            }
+
+
+
+
+
+        </script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+
+    </body>
+</html>

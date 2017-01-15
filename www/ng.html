@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+    <head>
+
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.min.css">
+        <script type="text/javascript" src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+        <title></title>
+
+
+
+
+
+
+    </head>
+    <body>
+
+
+
+
+
+        <div ng-app="myA" ng-controller="crtr">
+            <button   ng-click="num = num+1"></button><br>
+            {{num}}
+
+
+
+            {{ firstName + " " + lastName }}
+
+        </div>
+
+
+
+        <script type="text/javascript">
+            var app = angular.module("myA",['ionic']);
+            app.controller("crtr", function ($scope) {
+                $scope.num = 0;
+                $scope.firstName = 'aaa';
+                $scope.lastName  = '';
+                $scope.constructor;
+            });
+
+
+
+
+
+        </script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+
+    </body>
+</html>

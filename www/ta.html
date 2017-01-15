@@ -1,0 +1,236 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="lib/ionic/css/ionic.min.css">
+	<script type="text/javascript" src="lib/ionic/js/ionic.bundle.min.js"></script>
+	<script type="text/javascript">
+        angular.module('ionicApp', ['ionic'])
+
+            .controller('SlideController', function($scope) {
+
+                $scope.myActiveSlide = 0;
+
+                $scope.slideChange = function (index) {
+
+                    $scope.myActiveSlide = index;
+                    console.info(index);
+
+
+
+
+                }
+
+
+                if($scope.myActiveSlide == 1){
+                    console.info("1");
+				}
+
+
+				$scope.activeSlide  = function (ind) {
+
+                    //$ionicSlideBoxDelegate.slide(ind);
+                    $scope.myActiveSlide = ind;
+
+                }
+
+
+            })
+	</script>
+	<style type="text/css">
+		.slider {
+			height: 90%;
+		}
+		.slider-slide {
+			color: #000;
+			background-color: #fff; text-align: center;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; }
+		.blue {
+			background-color: blue;
+		}
+
+		.yellow {
+			background-color: yellow;
+		}
+
+		.pink {
+			background-color: pink;
+		}
+		.box{
+			height:100%;
+		}
+		.box h1{
+			position:relative; top:50%; transform:translateY(-50%);
+		}
+		.slide-tab li{float:left; height: 100%; line-height: 35px;  margin-left:7px;}
+		.slide-tab li a{color:#4c4c4c;}
+		.slide-tab a  li {color:#4c4c4c;}
+		.current{color: #ff174d !important; text-decoration: underline;}
+		.nocurrent{color: #4c4c4c !important;}
+		.mylist a img{width:100px; height: 100px; margin:10px; }
+	</style>
+</head>
+
+<body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="SlideController">
+<div style="height: 10%;">
+	<ul class="slide-tab">
+		<a  href="#" ng-click="activeSlide(0)"><li ng-class="myActiveSlide==0?'current':'nocurrent'">今日上新</li></a>
+		<a  href="#" ng-click="activeSlide(1)"><li ng-class="myActiveSlide==1?'current':'nocurrent'">女装</li></a>
+		<a  href="#" ng-click="activeSlide(2)"><li ng-class="myActiveSlide==2?'current':'nocurrent'">鞋包配饰</li></a>
+		<a  href="#" ng-click="activeSlide(3)"><li ng-class="myActiveSlide==3?'current':'nocurrent'">母婴童装</li></a>
+
+	</ul>
+
+</div>
+<ion-slide-box active-slide="myActiveSlide" auto-play="false" show-pager="false" on-slide-changed="slideChange($index)">
+	<ion-slide>
+		<div class="box">
+
+			<div class="list">
+
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/1.jpg">
+					<h2>富可视40寸电视</h2>
+					<p class="pink" style="color:white">￥400</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/2.jpg">
+					<h2>葡萄酒</h2>
+					<p class="pink" style="color:white">￥215</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/3.jpg">
+					<h2>御茯笔记本</h2>
+					<p class="pink" style="color:white">￥309</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/4.jpg">
+					<h2>项链</h2>
+					<p class="pink" style="color:white">￥4010</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/5.jpg">
+					<h2>x</h2>
+					<p class="pink" style="color:white">￥2100</p>
+					<p style="color: red">可用红包214个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/6.jpg">
+					<h2>slld</h2>
+					<p class="pink" style="color:white">￥3580</p>
+					<p style="color: red">可用红包201个</p>
+				</a>
+
+
+
+			</div>
+
+
+
+		</div>
+	</ion-slide>
+	<ion-slide>
+		<div class="box">
+
+			<div class="list">
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/5.jpg">
+
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/6.jpg">
+					<h2>slld</h2>
+					<p class="pink" style="color:white">￥3580</p>
+					<p style="color: red">可用红包201个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/1.jpg">
+					<h2>富可视40寸电视</h2>
+					<p class="pink" style="color:white">￥400</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/2.jpg">
+					<h2>葡萄酒</h2>
+					<p class="pink" style="color:white">￥215</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/3.jpg">
+					<h2>御茯笔记本</h2>
+					<p class="pink" style="color:white">￥309</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+
+
+
+
+
+			</div>
+
+
+
+
+
+
+		</div>
+	</ion-slide>
+	<ion-slide>
+		<div class="box">
+
+			<div class="list">
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/1.jpg">
+					<h2>富可视40寸电视</h2>
+					<p class="pink" style="color:white">￥400</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/2.jpg">
+					<h2>葡萄酒</h2>
+					<p class="pink" style="color:white">￥215</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+
+				<a class="item item-thumbnail-left" href="index.html">
+					<img src="./img/3.jpg">
+					<h2>御茯笔记本</h2>
+					<p class="pink" style="color:white">￥309</p>
+					<p style="color: red">可用红包21个</p>
+				</a>
+
+
+
+
+
+			</div>
+
+
+
+		</div>
+	</ion-slide>
+	<ion-slide>
+		<div class="box">
+		<div class="mylist">
+			<a href="index.html" ><img src="./img/2.jpg"></a>
+			<a href="index.html" ><img src="./img/1.jpg"></a>
+			<a href="index.html" ><img src="./img/3.jpg"></a>
+			<a href="index.html" ><img src="./img/5.jpg"></a>
+			<a href="index.html" ><img src="./img/4.jpg"></a>
+			<a href="index.html" ><img src="./img/6.jpg"></a>
+
+		</div>
+
+		</div>
+	</ion-slide>
+</ion-slide-box>
+
+</body>
+</html>
